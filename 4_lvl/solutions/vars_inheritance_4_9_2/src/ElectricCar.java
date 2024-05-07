@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class ElectricCar {
+public class ElectricCar extends Car {
+    int electricEnginePower;
 }

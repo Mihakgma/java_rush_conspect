@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class Woman {
+public class Woman extends Human{
 }

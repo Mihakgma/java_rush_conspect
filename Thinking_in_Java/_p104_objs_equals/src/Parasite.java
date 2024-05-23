@@ -1,4 +1,4 @@
-public class Parasite implements Animal{
+public class Parasite extends BasicAnimal{
     String name;
     private double weigthKg;
     public Parasite(String name) {
@@ -8,16 +8,4 @@ public class Parasite implements Animal{
     public void move() {
         System.out.println("Parasite " + this.name + " ambushes quickly");
     }
-
-    public double getWeigthKg() {
-        return weigthKg;
-    }
-    public void setWeigthKg(double weigthKg) {
-        if (weigthKg >= minKgWeight) {
-            this.weigthKg = weigthKg;
-        } else {
-            this.weigthKg = minKgWeight;
-        }
-    }
-
 }

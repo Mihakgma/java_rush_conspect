@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 public interface Animal {
     String nickName = "beastie";
     int minYearsOld = 0;
@@ -12,6 +11,5 @@ public interface Animal {
         System.out.println("Animal moves");
     }
     default void append_parazyte(Parasite parasite) {
-
     }
 }

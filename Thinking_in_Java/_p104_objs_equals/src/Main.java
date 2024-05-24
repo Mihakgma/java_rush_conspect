@@ -6,7 +6,7 @@ public class Main {
         DecimalFormat df = new DecimalFormat("#.#####");
 
         Dog dog1 = new Dog("Spot");
-        dog1.setWeigthKg(3);
+        dog1.setWeigthKg(7.3);
         Dog dog2 = new Dog("Spot");
         dog2.setWeigthKg(3);
         dog2.setYearsOld(100);
@@ -38,12 +38,17 @@ public class Main {
         dog1.says();
         cat1.says();
 
-        Parasite flea = new Parasite("flea");
+        Parasite flea = new Parasite("Flea");
         flea.setWeigthKg(0.01);
         dog1.append_parazyte(flea);
         dog1.append_parazyte(flea);
         dog1.append_parazyte(flea);
+        var bullTapeworm = new Parasite("Bull tapeworm");
+        bullTapeworm.setWeigthKg(0.47);
+        dog1.append_parazyte(bullTapeworm);
+        dog1.append_parazyte(bullTapeworm);
         System.out.println(df.format(dog1.getWeigthKg()));
+        System.out.println("\nParasites on an animal:");
         for (int i = 0; i < dog1.parasitesLanded.size(); i++) {
             System.out.println(dog1.parasitesLanded.get(i).name);
         }
@@ -53,5 +58,6 @@ public class Main {
         System.out.println("cats weight after fleas landing is:");
         System.out.println(df.format(cat1.getWeigthKg()));
         System.out.println(cat1.parasitesLanded);
+//        cat1.parasitesLanded.remove(2);
     }
 }

@@ -5,11 +5,12 @@ public class Cat extends BasicAnimal {
     private int yearsOld;
     private double weigthKg;
     private int maxYearsOld = 25;
-    public ArrayList<Parasite> parasitesLanded = new ArrayList<Parasite>();
+    public ArrayList<Parasite> parasitesLanded;
     public Cat(String name) {
         this.name = name;
         this.yearsOld = minYearsOld;
         this.weigthKg = minKgWeight;
+        this.parasitesLanded = new ArrayList<Parasite>();
     }
     public String getName() {
         return name;

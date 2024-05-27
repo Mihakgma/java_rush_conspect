@@ -6,6 +6,12 @@ public class BasicAnimal implements Animal{
     private double weigthKg;
     private int maxYearsOld = 35;
     public ArrayList<Parasite> parasitesLanded = new ArrayList<Parasite>();
+    public BasicAnimal() {
+        this.name = "";
+        this.yearsOld = minYearsOld;
+        this.weigthKg = minKgWeight;
+        this.parasitesLanded = new ArrayList<Parasite>();
+    }
 
     public String getName() {
         return name;

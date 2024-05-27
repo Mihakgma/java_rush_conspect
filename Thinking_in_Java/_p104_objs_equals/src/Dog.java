@@ -22,4 +22,5 @@ public class Dog extends BasicAnimal {
     public void move() {
         System.out.println("Dog " + this.name + " runs strictly");
     }
+
 }

@@ -1,16 +1,14 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+
 public class VampireDigits {
     public int digitLength;
-    private int digitToShow;
     private ArrayList<int[]> digitPairs;
-    public VampireDigits(int digitLength, int digitToShow) {
+    public VampireDigits(int digitLength) {
         if (isLengthDigitOk(digitLength)) {
             this.digitLength = digitLength;
             this.digitPairs = computeDigitPairs();
-            this.digitToShow = digitToShow;
         }
     }
     private boolean isLengthDigitOk(int digit) {
@@ -39,9 +37,7 @@ public class VampireDigits {
         // main logic for loop (iterator)
         for (long i = minValue; i < maxValue; i++) {
             List<String> lst = generateCombinations(String.valueOf(i), multiplierLength);
-//            if (i == 1260L) {
-//                print(lst);
-//            }
+
             int[] tempArray = new int[lst.size()];
             int indx = 0;
             for (String elem: lst) {

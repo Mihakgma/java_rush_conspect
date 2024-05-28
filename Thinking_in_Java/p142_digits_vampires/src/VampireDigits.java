@@ -6,12 +6,12 @@ public class VampireDigits {
     public int digitLength;
     private ArrayList<int[]> digitPairs;
     public VampireDigits(int digitLength) {
-        if (isLengthDigitOk(digitLength)) {
+        if (isDigitLengthOk(digitLength)) {
             this.digitLength = digitLength;
             this.digitPairs = computeDigitPairs();
         }
     }
-    private boolean isLengthDigitOk(int digit) {
+    private boolean isDigitLengthOk(int digit) {
         if (digit % 2 != 0) {
             print("Could not create class object cause of ...");
             print("the digitLength parameter must be integer type && an even number");

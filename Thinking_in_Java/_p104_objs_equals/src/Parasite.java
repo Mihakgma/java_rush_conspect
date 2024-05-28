@@ -1,5 +1,5 @@
 public class Parasite extends BasicAnimal{
-    String name;
+    public String name;
     private double weigthKg;
     public Parasite(String name) {
         this.name = name;

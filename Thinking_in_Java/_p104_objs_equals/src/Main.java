@@ -15,24 +15,24 @@ public class Main {
         cat1.setWeigthKg(3.);
 
         dog1.setYearsOld(-999);
-        System.out.println(dog1.getYearsOld());
+        print(dog1.getYearsOld());
         dog1.setYearsOld(1);
-        System.out.println(dog1.getYearsOld());
+        print(dog1.getYearsOld());
         dog1.setYearsOld(100);
-        System.out.println(dog1.getYearsOld());
-        System.out.println(dog1.getWeigthKg());
+        print(dog1.getYearsOld());
+        print(dog1.getWeigthKg());
 
-        System.out.println(dog1 == dog2);
-        System.out.println(dog1.equals(dog2));
-        System.out.println(dog1.hashCode());
-        System.out.println(dog2.hashCode());
+        print(dog1 == dog2);
+        print(dog1.equals(dog2));
+        print(dog1.hashCode());
+        print(dog2.hashCode());
 
-        System.out.println(dog1.name == dog2.name);
-        System.out.println(dog1.name.equals(dog2.name));
+        print(dog1.name == dog2.name);
+        print(dog1.name.equals(dog2.name));
 
-        System.out.println(dog1.getWeigthKg() == dog2.getWeigthKg());
-//        System.out.println(dog1.getWeigthKg().equals(dog2.getWeigthKg()));
-        System.out.println("Hello, animals classes World!");
+        print(dog1.getWeigthKg() == dog2.getWeigthKg());
+//        print(dog1.getWeigthKg().equals(dog2.getWeigthKg()));
+        print("Hello, animals classes World!");
         dog1.move();
         cat1.move();
         dog1.says();
@@ -47,17 +47,23 @@ public class Main {
         bullTapeworm.setWeigthKg(0.47);
         dog1.append_parazyte(bullTapeworm);
         dog1.append_parazyte(bullTapeworm);
-        System.out.println(df.format(dog1.getWeigthKg()));
-        System.out.println("\nParasites on an animal:");
+        print(df.format(dog1.getWeigthKg()));
+        print("\nParasites on an animal:");
         for (int i = 0; i < dog1.parasitesLanded.size(); i++) {
-            System.out.println(dog1.parasitesLanded.get(i).name);
+            print(dog1.parasitesLanded.get(i).name);
         }
-        System.out.println("cats weight before fleas landing is:");
-        System.out.println(df.format(cat1.getWeigthKg()));
+        print("Количество паразитов на " + dog1.getName() + ":\n");
+        print(dog1.parasitesLanded.size() + "\n");
+        print("cats weight before fleas landing is:");
+        print(df.format(cat1.getWeigthKg()));
         dog1.shareParasites(cat1, true, 0);
-        System.out.println("cats weight after fleas landing is:");
-        System.out.println(df.format(cat1.getWeigthKg()));
-        System.out.println(cat1.parasitesLanded);
+        print("cats weight after fleas landing is:");
+        print(df.format(cat1.getWeigthKg()));
+        print("Количество паразитов на " + cat1.getName() + ":\n");
+        print(cat1.parasitesLanded.size());
 //        cat1.parasitesLanded.remove(2);
+    }
+    static void print(Object obj) {
+        System.out.println(obj);
     }
 }

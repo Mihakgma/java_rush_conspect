@@ -7,7 +7,7 @@ public class BasicAnimal implements Animal{
     private int maxYearsOld = 35;
     public ArrayList<Parasite> parasitesLanded = new ArrayList<Parasite>();
     public BasicAnimal() {
-        this.name = "";
+//        this.name = "";
         this.yearsOld = minYearsOld;
         this.weigthKg = minKgWeight;
         this.parasitesLanded = new ArrayList<Parasite>();
@@ -46,7 +46,7 @@ public class BasicAnimal implements Animal{
         }
     }
     public void append_parazyte(Parasite parasite) {
-        System.out.println(parasite.name + " successfully landed upon " + getName() + ":-(");
+        System.out.println(parasite.name + " successfully landed upon " + this.getName() + ":-(");
         this.parasitesLanded.add(parasite);
         this.setWeigthKg(this.getWeigthKg() + parasite.getWeigthKg());
         this.says();

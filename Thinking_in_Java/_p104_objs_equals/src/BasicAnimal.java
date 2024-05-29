@@ -4,13 +4,15 @@ public class BasicAnimal implements Animal{
     protected String name;
     protected int yearsOld;
     protected double weigthKg;
-    protected int maxYearsOld = 35;
+    protected int maxYearsOld = 250; // turtle is the oldest one amongst all animals!!!
+    protected boolean isAlive;
     public ArrayList<Parasite> parasitesLanded = new ArrayList<Parasite>();
     public BasicAnimal() {
 //        this.name = "";
         this.yearsOld = minYearsOld;
         this.weigthKg = minKgWeight;
         this.parasitesLanded = new ArrayList<Parasite>();
+        this.isAlive = true;
     }
 
     public String getName() {
@@ -21,12 +23,37 @@ public class BasicAnimal implements Animal{
         return this.yearsOld;
     }
 
-    public double getWeigthKg() {
-        return this.weigthKg;
+    public double getWeigthKg() {return this.weigthKg;}
+
+    protected void becomeDead() {
+        setWeigthKg(-999);
+        this.isAlive = false;
+        System.out.println(getName() + " is dead...");
+    }
+    protected boolean checkIfDead() {
+        if (this.isAlive == false) {
+            System.out.println(getName() + " is dead...");
+            return true;
+        }
+        return false;
+    }
+
+    public void eatAnimal(BasicAnimal animal) {
+        if (animal.checkIfDead()) {
+            return;
+        }
+        // setting new weight
+        setWeigthKg(getWeigthKg() + animal.getWeigthKg());
+        animal.becomeDead();
+        this.says();
+        System.out.println(getName() + ": mmmm, how delicious " + animal.getName() + " is!");
     }
 
 
     public void setYearsOld(int yearsOld, int maxYearsOld) {
+        if (this.checkIfDead()) {
+            return;
+        }
         if (yearsOld >= minYearsOld &&
                 yearsOld >= getYearsOld() &&
                 yearsOld <= maxYearsOld) {
@@ -39,6 +66,9 @@ public class BasicAnimal implements Animal{
     }
 
     public void setWeigthKg(double weigthKg) {
+        if (this.checkIfDead()) {
+            return;
+        }
         if (weigthKg >= minKgWeight) {
             this.weigthKg = weigthKg;
         } else {
@@ -46,12 +76,18 @@ public class BasicAnimal implements Animal{
         }
     }
     public void append_parazyte(Parasite parasite) {
+        if (this.checkIfDead()) {
+            return;
+        }
         System.out.println(parasite.name + " successfully landed upon " + this.getName() + ":-(");
         this.parasitesLanded.add(parasite);
         this.setWeigthKg(this.getWeigthKg() + parasite.getWeigthKg());
         this.says();
     }
     public void shareParasites(BasicAnimal animal, boolean all, int prstsToShare) {
+        if (this.checkIfDead() || animal.checkIfDead()) {
+            return;
+        }
         int maxPrstsShare = this.parasitesLanded.size() - 1;
         if (all) {
             for (int i = 0; i < this.parasitesLanded.size(); i++) {

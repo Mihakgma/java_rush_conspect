@@ -64,6 +64,20 @@ public class Main {
         cat1.parasitesLanded.remove(2);
         print("Количество паразитов на " + cat1.getName() + ":\n");
         print(cat1.parasitesLanded.size());
+
+        print("\n A new class obj - bird");
+        Bird sparrow = new Bird("Sparrow");
+        sparrow.setWeigthKg(0.15);
+        sparrow.move();
+        sparrow.says();
+        print("sparrow weight before being eaten is:");
+        print(df.format(sparrow.getWeigthKg()));
+        cat1.eatAnimal(sparrow);
+        print("sparrow weight after being eaten is:");
+        print(df.format(sparrow.getWeigthKg()));
+        print("trying to do some actions by or with eaten sparrow:");
+        sparrow.move();
+        sparrow.says();
     }
     static void print(Object obj) {
         System.out.println(obj);

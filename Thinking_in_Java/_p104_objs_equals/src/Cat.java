@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Cat extends BasicAnimal {
     public String name;
-    private int maxYearsOld = 20;
+    private int maxYearsOld = 40;
     public Cat(String name) {
         super();
         this.name = name;

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+// import static methods to simplify their using
+import static java.lang.System.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,6 +11,7 @@ public class Main {
         elements.add(new LinkageError());
 
         checkElementsType(elements);
+        out.println("Hello from static import!!!");
     }
     public static void checkElementsType(ArrayList<Object> elements) {
         for (Object elem: elements) {

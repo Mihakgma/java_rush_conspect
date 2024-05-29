@@ -2,10 +2,7 @@ import java.util.ArrayList;
 
 public class Cat extends BasicAnimal {
     public String name;
-    private int yearsOld;
-    private double weigthKg;
-    private int maxYearsOld = 25;
-    public ArrayList<Parasite> parasitesLanded = new ArrayList<Parasite>();
+    private int maxYearsOld = 20;
     public Cat(String name) {
         super();
         this.name = name;
@@ -19,10 +16,7 @@ public class Cat extends BasicAnimal {
     public void move() {
         System.out.println("Cat " + this.name + " graciously walks");
     }
-    public void append_parazyte(Parasite parasite) {
-        super.append_parazyte(parasite);
-    }
-    public void shareParasites(BasicAnimal animal, boolean all, int prstsToShare) {
-        super.shareParasites(animal, all, prstsToShare);
+    public void setYearsOld(int yearsOld) {
+        super.setYearsOld(yearsOld, this.maxYearsOld);
     }
 }

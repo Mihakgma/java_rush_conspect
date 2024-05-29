@@ -61,7 +61,9 @@ public class Main {
         print(df.format(cat1.getWeigthKg()));
         print("Количество паразитов на " + cat1.getName() + ":\n");
         print(cat1.parasitesLanded.size());
-//        cat1.parasitesLanded.remove(2);
+        cat1.parasitesLanded.remove(2);
+        print("Количество паразитов на " + cat1.getName() + ":\n");
+        print(cat1.parasitesLanded.size());
     }
     static void print(Object obj) {
         System.out.println(obj);

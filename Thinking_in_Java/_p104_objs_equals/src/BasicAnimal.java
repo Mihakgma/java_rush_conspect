@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class BasicAnimal implements Animal{
-    public String name;
-    private int yearsOld;
-    private double weigthKg;
-    private int maxYearsOld = 35;
+    protected String name;
+    protected int yearsOld;
+    protected double weigthKg;
+    protected int maxYearsOld = 35;
     public ArrayList<Parasite> parasitesLanded = new ArrayList<Parasite>();
     public BasicAnimal() {
 //        this.name = "";
@@ -22,13 +22,13 @@ public class BasicAnimal implements Animal{
     }
 
     public double getWeigthKg() {
-        return weigthKg;
+        return this.weigthKg;
     }
 
 
-    public void setYearsOld(int yearsOld) {
+    public void setYearsOld(int yearsOld, int maxYearsOld) {
         if (yearsOld >= minYearsOld &&
-                yearsOld >= this.getYearsOld() &&
+                yearsOld >= getYearsOld() &&
                 yearsOld <= maxYearsOld) {
             this.yearsOld = yearsOld;
         } else if (yearsOld > maxYearsOld) {
@@ -61,7 +61,7 @@ public class BasicAnimal implements Animal{
             if (prstsToShare > maxPrstsShare || prstsToShare < 0) {
                 System.out.println("Parasites to share number has to be between 0 and " + maxPrstsShare);
                 System.out.println("You have tried to share first " + prstsToShare + " parasites of " + this.name);
-                System.out.println("Sharing process has been denied.");
+                System.out.println("Sharing process has been stopped.");
             } else {
                 for (int i = 0; i < prstsToShare; i++) {
                     animal.append_parazyte(this.parasitesLanded.get(i));

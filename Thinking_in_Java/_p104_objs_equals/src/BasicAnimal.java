@@ -7,12 +7,31 @@ public class BasicAnimal implements Animal{
     protected int maxYearsOld = 250; // turtle is the oldest one amongst all animals!!!
     protected boolean isAlive;
     public ArrayList<Parasite> parasitesLanded = new ArrayList<Parasite>();
-    public BasicAnimal() {
+    protected int legsNum;
+    protected ArrayList<Leg> legsContainer = new ArrayList<>();
+
+    public BasicAnimal(Legs legs) {
 //        this.name = "";
         this.yearsOld = minYearsOld;
         this.weigthKg = minKgWeight;
         this.parasitesLanded = new ArrayList<Parasite>();
         this.isAlive = true;
+        this.legsNum = legs.ordinal();
+        fulfillLegsContainer();
+    }
+
+    protected void fulfillLegsContainer() {
+        for (int i = 0; i < legsNum; i++) {
+            legsContainer.add(new Leg());
+        }
+    }
+
+    public ArrayList<Leg> getLegsConainer() {
+        return legsContainer;
+    }
+    public void printLegsNumber() {
+        print(getName() + " has " + legsNum + " legs");
+        print(getLegsConainer());
     }
 
     public String getName() {
@@ -28,11 +47,11 @@ public class BasicAnimal implements Animal{
     protected void becomeDead() {
         setWeigthKg(-999);
         this.isAlive = false;
-        System.out.println(getName() + " is dead...");
+        print(getName() + " is dead...");
     }
     protected boolean checkIfDead() {
         if (this.isAlive == false) {
-            System.out.println(getName() + " is dead...");
+            print(getName() + " is dead...");
             return true;
         }
         return false;
@@ -46,7 +65,7 @@ public class BasicAnimal implements Animal{
         setWeigthKg(getWeigthKg() + animal.getWeigthKg());
         animal.becomeDead();
         this.says();
-        System.out.println(getName() + ": mmmm, how delicious " + animal.getName() + " is!");
+        print(getName() + ": mmmm, how delicious " + animal.getName() + " is!");
     }
 
 
@@ -79,7 +98,11 @@ public class BasicAnimal implements Animal{
         if (this.checkIfDead()) {
             return;
         }
-        System.out.println(parasite.name + " successfully landed upon " + this.getName() + ":-(");
+        if (parasitesLanded.contains(parasite)) {
+            print(getName() + " already has " + parasite.getName());
+            return;
+        }
+        print(parasite.getName() + " successfully landed upon " + this.getName() + ":-(");
         this.parasitesLanded.add(parasite);
         this.setWeigthKg(this.getWeigthKg() + parasite.getWeigthKg());
         this.says();
@@ -95,14 +118,17 @@ public class BasicAnimal implements Animal{
             }
         } else {
             if (prstsToShare > maxPrstsShare || prstsToShare < 0) {
-                System.out.println("Parasites to share number has to be between 0 and " + maxPrstsShare);
-                System.out.println("You have tried to share first " + prstsToShare + " parasites of " + this.name);
-                System.out.println("Sharing process has been stopped.");
+                print("Parasites to share number has to be between 0 and " + maxPrstsShare);
+                print("You have tried to share first " + prstsToShare + " parasites of " + this.name);
+                print("Sharing process has been stopped.");
             } else {
                 for (int i = 0; i < prstsToShare; i++) {
                     animal.append_parazyte(this.parasitesLanded.get(i));
                 }
             }
         }
+    }
+    static void print(Object obj) {
+        System.out.println(obj);
     }
 }

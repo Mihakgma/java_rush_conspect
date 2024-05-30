@@ -3,7 +3,7 @@ public class Bird extends BasicAnimal{
     private int maxYearsOld = 75; // probably crows
 
     public Bird(String name) {
-        super();
+        super(Legs.Bipedal);
         this.name = name;
     }
     public String getName() {

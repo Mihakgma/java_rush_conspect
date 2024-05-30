@@ -27,8 +27,8 @@ public class Main {
         print(dog1.hashCode());
         print(dog2.hashCode());
 
-        print(dog1.name == dog2.name);
-        print(dog1.name.equals(dog2.name));
+        print(dog1.getName() == dog2.getName());
+        print(dog1.getName().equals(dog2.getName()));
 
         print(dog1.getWeigthKg() == dog2.getWeigthKg());
 //        print(dog1.getWeigthKg().equals(dog2.getWeigthKg()));
@@ -38,19 +38,21 @@ public class Main {
         dog1.says();
         cat1.says();
 
-        Parasite flea = new Parasite("Flea");
+        Parasite flea = new Parasite("Flea", Legs.Insects);
         flea.setWeigthKg(0.01);
+        flea.printLegsNumber();
         dog1.append_parazyte(flea);
         dog1.append_parazyte(flea);
         dog1.append_parazyte(flea);
-        var bullTapeworm = new Parasite("Bull tapeworm");
+        var bullTapeworm = new Parasite("Bull tapeworm", Legs.Nolegs);
         bullTapeworm.setWeigthKg(0.47);
+        bullTapeworm.printLegsNumber();
         dog1.append_parazyte(bullTapeworm);
         dog1.append_parazyte(bullTapeworm);
         print(df.format(dog1.getWeigthKg()));
         print("\nParasites on an animal:");
         for (int i = 0; i < dog1.parasitesLanded.size(); i++) {
-            print(dog1.parasitesLanded.get(i).name);
+            print(dog1.parasitesLanded.get(i).getName());
         }
         print("Количество паразитов на " + dog1.getName() + ":\n");
         print(dog1.parasitesLanded.size() + "\n");
@@ -61,7 +63,7 @@ public class Main {
         print(df.format(cat1.getWeigthKg()));
         print("Количество паразитов на " + cat1.getName() + ":\n");
         print(cat1.parasitesLanded.size());
-        cat1.parasitesLanded.remove(2);
+        cat1.parasitesLanded.remove(1);
         print("Количество паразитов на " + cat1.getName() + ":\n");
         print(cat1.parasitesLanded.size());
 

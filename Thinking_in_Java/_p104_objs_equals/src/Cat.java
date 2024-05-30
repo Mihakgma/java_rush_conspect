@@ -1,10 +1,9 @@
-import java.util.ArrayList;
 
 public class Cat extends BasicAnimal {
-    public String name;
+    protected String name;
     private int maxYearsOld = 40;
     public Cat(String name) {
-        super();
+        super(Legs.Quadruped);
         this.name = name;
     }
     public String getName() {

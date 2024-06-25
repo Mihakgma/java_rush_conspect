@@ -83,6 +83,11 @@ public class Main {
         print("\\nRacoon check...");
         Mammal racoon = new Mammal("Racoon", 4);
         print(racoon);
+        racoon.move();
+        racoon.says();
+        Bath bath = new Bath();
+        bath.washAnimal(racoon);
+        print(racoon);
     }
     static void print(Object obj) {
         System.out.println(obj);

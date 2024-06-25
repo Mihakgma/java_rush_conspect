@@ -1,7 +1,7 @@
 public interface Animal {
     String nickName = "beastie";
     int minYearsOld = 0;
-    double minKgWeight = 0;
+    double minKgWeight = 0.00001;
 
 
     default void says(){

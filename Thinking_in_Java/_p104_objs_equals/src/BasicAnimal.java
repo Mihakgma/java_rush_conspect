@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 
 public class BasicAnimal implements Animal{
     protected String name;
@@ -9,6 +10,7 @@ public class BasicAnimal implements Animal{
     public ArrayList<Parasite> parasitesLanded = new ArrayList<Parasite>();
     protected int legsNum;
     protected ArrayList<Leg> legsContainer = new ArrayList<>();
+    protected boolean isClean;
 
     public BasicAnimal(Legs legs) {
 //        this.name = "";
@@ -18,6 +20,7 @@ public class BasicAnimal implements Animal{
         this.isAlive = true;
         this.legsNum = legs.ordinal();
         fulfillLegsContainer();
+
     }
 
     protected void fulfillLegsContainer() {
@@ -43,6 +46,10 @@ public class BasicAnimal implements Animal{
     }
 
     public double getWeigthKg() {return this.weigthKg;}
+
+    void becameClean() {
+        isClean = true;
+    }
 
     protected void becomeDead() {
         setWeigthKg(-999);
@@ -136,12 +143,14 @@ public class BasicAnimal implements Animal{
 
     @Override
     public String toString() {
+        DecimalFormat df = new DecimalFormat("#.#####");
         return
                 "Name: " + getName() + "\n" +
-                "Weight: " + getWeigthKg() + "\n" +
+                "Weight: " + df.format(getWeigthKg()) + "\n" +
                 "Is alive: " + isAlive + "\n" +
                 "Legs number: " + getLegsNum() + "\n" +
-                "Parazites number: " + parasitesLanded.size();
+                "Parazites number: " + parasitesLanded.size() + "\n" +
+                "Is clean: " + isClean;
     }
 
     static void print(Object obj) {

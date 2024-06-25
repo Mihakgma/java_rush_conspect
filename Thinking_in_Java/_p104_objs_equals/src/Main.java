@@ -80,6 +80,9 @@ public class Main {
         print("trying to do some actions by or with eaten sparrow:");
         sparrow.move();
         sparrow.says();
+        print("\\nRacoon check...");
+        Mammal racoon = new Mammal("Racoon", 4);
+        print(racoon);
     }
     static void print(Object obj) {
         System.out.println(obj);

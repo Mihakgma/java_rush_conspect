@@ -1,15 +1,14 @@
 
-public class Dog extends BasicAnimal {
+public class Dog extends Mammal {
     protected String name;
     private int maxYearsOld = 30;
 
     public Dog(String name) {
-        super(Legs.Quadruped);
-        this.name = name;
+        super(name, Legs.Quadruped);
     }
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
     public void says() {
         System.out.println("Dog " + this.name + " barks");
     }

@@ -128,6 +128,22 @@ public class BasicAnimal implements Animal{
             }
         }
     }
+
+
+    public int getLegsNum() {
+        return legsNum;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "Name: " + getName() + "\n" +
+                "Weight: " + getWeigthKg() + "\n" +
+                "Is alive: " + isAlive + "\n" +
+                "Legs number: " + getLegsNum() + "\n" +
+                "Parazites number: " + parasitesLanded.size();
+    }
+
     static void print(Object obj) {
         System.out.println(obj);
     }

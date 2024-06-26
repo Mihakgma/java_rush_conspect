@@ -88,6 +88,13 @@ public class Main {
         Bath bath = new Bath();
         bath.washAnimal(racoon);
         print(racoon);
+        Mammal beast = new Mammal();
+        print(beast);
+        Human eric = new Human("Eric");
+        eric.setYearsOld(19);
+        eric.setWeigthKg(69.0);
+        bath.washAnimal(eric);
+        print(eric);
     }
     static void print(Object obj) {
         System.out.println(obj);

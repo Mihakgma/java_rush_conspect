@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.text.DecimalFormat;
 
+
 public class BasicAnimal implements Animal{
     protected String name;
     protected int yearsOld;
@@ -20,7 +21,6 @@ public class BasicAnimal implements Animal{
         this.isAlive = true;
         this.legsNum = legs.ordinal();
         fulfillLegsContainer();
-
     }
 
     protected void fulfillLegsContainer() {
@@ -146,6 +146,7 @@ public class BasicAnimal implements Animal{
         DecimalFormat df = new DecimalFormat("#.#####");
         return
                 "Name: " + getName() + "\n" +
+                "Years old: " + getYearsOld() + "\n" +
                 "Weight: " + df.format(getWeigthKg()) + "\n" +
                 "Is alive: " + isAlive + "\n" +
                 "Legs number: " + getLegsNum() + "\n" +

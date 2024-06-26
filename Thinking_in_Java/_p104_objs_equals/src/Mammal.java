@@ -1,4 +1,8 @@
 public class Mammal extends BasicAnimal {
+    public Mammal() {
+        super(Legs.Quadruped);
+        this.name = nickName;
+    }
     public Mammal(String name) {
         super(Legs.Quadruped);
         this.name = name;

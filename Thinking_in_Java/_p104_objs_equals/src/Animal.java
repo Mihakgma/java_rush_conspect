@@ -1,5 +1,5 @@
 public interface Animal {
-    String nickName = "beastie";
+    String nickName = "Beastie";
     int minYearsOld = 0;
     double minKgWeight = 0.00001;
 

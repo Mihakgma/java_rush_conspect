@@ -6,14 +6,11 @@ public class Dog extends Mammal {
     public Dog(String name) {
         super(name, Legs.Quadruped);
     }
-//    public String getName() {
-//        return name;
-//    }
     public void says() {
-        System.out.println("Dog " + this.name + " barks");
+        System.out.println("Dog " + getName() + " barks");
     }
     public void move() {
-        System.out.println("Dog " + this.name + " runs strictly");
+        System.out.println("Dog " + getName() + " runs strictly");
     }
     public void setYearsOld(int yearsOld) {
         super.setYearsOld(yearsOld, this.maxYearsOld);

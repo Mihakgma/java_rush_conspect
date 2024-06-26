@@ -6,6 +6,8 @@ import java.text.DecimalFormat;
 @author Mikhail Tabakaev
  NB! Need to think about using Observer Pattern in this project. If this is really needed here...
  Objects Fabrique is necessary here or not - need to find out!!!
+ In BasicAnimal class need to add removeParasite method and field parasitesLanded make protected
+ to keep it save of unsanctional changes!!!
  */
 public class Main {
     public static void main(String[] args) throws Throwable {
@@ -61,6 +63,8 @@ public class Main {
         print(dog1);
         bullTapeworm.becomeDead();
         print(dog1);
+        print(flea);
+        print(bullTapeworm);
         print("\nParasites on an animal:");
         for (int i = 0; i < dog1.parasitesLanded.size(); i++) {
             print(dog1.parasitesLanded.get(i).getName());
@@ -74,7 +78,7 @@ public class Main {
         print(df.format(cat1.getWeigthKg()));
         print("Количество паразитов на " + cat1.getName() + ":\n");
         print(cat1.parasitesLanded.size());
-        cat1.parasitesLanded.remove(1);
+        cat1.parasitesLanded.remove(0);
         print("Количество паразитов на " + cat1.getName() + ":\n");
         print(cat1.parasitesLanded.size());
 

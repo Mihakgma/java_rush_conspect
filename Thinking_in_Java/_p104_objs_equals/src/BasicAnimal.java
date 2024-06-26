@@ -55,16 +55,16 @@ public class BasicAnimal implements Animal{
         isClean = true;
     }
 
-    protected void becomeDead() throws Throwable {
+    protected void becomeDead() {
 //        setWeigthKg(-999);
         this.isAlive = false;
         print(getName() + " is dead...");
-        finalize();
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
+        if (this instanceof Parasite) {
+            BasicAnimal host = ((Parasite) this).getHost();
+            // remove parasite from parasite list here through special method!!!
+            ((Parasite) this).setHost(null);
+        }
+//        Killer.finish(this);
     }
 
     protected boolean checkIfDead() {
@@ -113,7 +113,7 @@ public class BasicAnimal implements Animal{
         }
     }
     public void append_parazyte(Parasite parasite) {
-        if (this.checkIfDead()) {
+        if (this.checkIfDead() || parasite.checkIfDead()) {
             return;
         }
         if (parasitesLanded.contains(parasite)) {
@@ -122,6 +122,7 @@ public class BasicAnimal implements Animal{
         }
         print(parasite.getName() + " successfully landed upon " + this.getName() + ":-(");
         this.parasitesLanded.add(parasite);
+        parasite.setHost(this);
         this.setWeigthKg(this.getWeigthKg() + parasite.getWeigthKg());
         this.says();
     }

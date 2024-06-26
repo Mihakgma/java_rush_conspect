@@ -41,6 +41,10 @@ public class BasicAnimal implements Animal{
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getYearsOld() {
         return this.yearsOld;
     }

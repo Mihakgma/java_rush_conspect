@@ -95,6 +95,7 @@ public class Main {
         eric.setWeigthKg(69.0);
         bath.washAnimal(eric);
         print(eric);
+        eric.says();
     }
     static void print(Object obj) {
         System.out.println(obj);

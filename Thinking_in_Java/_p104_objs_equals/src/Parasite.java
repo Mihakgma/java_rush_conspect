@@ -3,7 +3,7 @@ public class Parasite extends BasicAnimal{
     public Legs legs;
     public Parasite(String name, Legs legs) {
         super(legs);
-        this.name = name;
+        super.setName(name);
     }
     public void move() {
         System.out.println("Parasite " + this.name + " ambushes quickly");

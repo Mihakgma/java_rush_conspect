@@ -6,7 +6,7 @@ public class Human extends Mammal {
     }
     public void says() {
         System.out.println("Hi, my name is " + getName() +
-                " I am " + getYearsOld() + " years old");
+                ".\nI am " + getYearsOld() + " years old.");
     }
     public void move() {
         System.out.println(getName() + " walks");

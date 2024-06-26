@@ -1,19 +1,19 @@
 public class Mammal extends BasicAnimal {
     public Mammal() {
         super(Legs.Quadruped);
-        this.name = nickName;
+        super.setName(nickName);
     }
     public Mammal(String name) {
         super(Legs.Quadruped);
-        this.name = name;
+        super.setName(name);
     }
     public Mammal (String name, int legs) {
         super(Mammal.checkLegsNumber(legs));
-        this.name = name;
+        super.setName(name);
     }
     public Mammal(String name, Legs legs) {
         super(legs);
-        this.name = name;
+        super.setName(name);
     }
 
     protected static Legs checkLegsNumber(int legsNumber) throws ArrayIndexOutOfBoundsException{

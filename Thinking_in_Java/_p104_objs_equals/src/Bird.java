@@ -4,7 +4,7 @@ public class Bird extends BasicAnimal{
 
     public Bird(String name) {
         super(Legs.Bipedal);
-        this.name = name;
+        super.setName(name);
     }
     public String getName() {
         return name;

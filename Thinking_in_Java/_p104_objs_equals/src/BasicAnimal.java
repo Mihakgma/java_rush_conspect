@@ -55,11 +55,18 @@ public class BasicAnimal implements Animal{
         isClean = true;
     }
 
-    protected void becomeDead() {
-        setWeigthKg(-999);
+    protected void becomeDead() throws Throwable {
+//        setWeigthKg(-999);
         this.isAlive = false;
         print(getName() + " is dead...");
+        finalize();
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
+
     protected boolean checkIfDead() {
         if (this.isAlive == false) {
             print(getName() + " is dead...");
@@ -68,7 +75,7 @@ public class BasicAnimal implements Animal{
         return false;
     }
 
-    public void eatAnimal(BasicAnimal animal) {
+    public void eatAnimal(BasicAnimal animal) throws Throwable {
         if (animal.checkIfDead()) {
             return;
         }

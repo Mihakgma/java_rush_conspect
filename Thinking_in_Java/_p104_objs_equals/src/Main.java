@@ -1,8 +1,14 @@
 //import java.util.Arrays;
 import java.text.DecimalFormat;
 
+
+/***
+@author Mikhail Tabakaev
+ NB! Need to think about using Observer Pattern in this project. If this is really needed here...
+ Objects Fabrique is necessary here or not - need to find out!!!
+ */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
         DecimalFormat df = new DecimalFormat("#.#####");
 
         Dog dog1 = new Dog("Spot");
@@ -45,11 +51,16 @@ public class Main {
         dog1.append_parazyte(flea);
         dog1.append_parazyte(flea);
         var bullTapeworm = new Parasite("Bull tapeworm", Legs.Nolegs);
+        print("bullTapeworm created!!!");
+        print(bullTapeworm);
         bullTapeworm.setWeigthKg(0.47);
         bullTapeworm.printLegsNumber();
         dog1.append_parazyte(bullTapeworm);
         dog1.append_parazyte(bullTapeworm);
         print(df.format(dog1.getWeigthKg()));
+        print(dog1);
+        bullTapeworm.becomeDead();
+        print(dog1);
         print("\nParasites on an animal:");
         for (int i = 0; i < dog1.parasitesLanded.size(); i++) {
             print(dog1.parasitesLanded.get(i).getName());

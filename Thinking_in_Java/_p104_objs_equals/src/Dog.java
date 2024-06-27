@@ -1,7 +1,7 @@
 
 public class Dog extends Mammal {
     protected String name;
-    private int maxYearsOld = 30;
+    private final int maxYearsOld = 30;
 
     public Dog(String name) {
         super(name, Legs.Quadruped);

@@ -64,7 +64,7 @@ public class BasicAnimal implements Animal{
             // remove parasite from parasite list here through special method!!!
             ((Parasite) this).setHost(null);
         }
-//        Killer.finish(this);
+//        ObjsKiller.finish(this);
     }
 
     protected boolean checkIfDead() {

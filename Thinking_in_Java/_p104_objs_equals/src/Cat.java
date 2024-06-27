@@ -1,7 +1,7 @@
 
 public class Cat extends Mammal {
     protected String name;
-    private int maxYearsOld = 40;
+    private final int maxYearsOld = 40;
     public Cat(String name) {
         super(name, Legs.Quadruped);
     }

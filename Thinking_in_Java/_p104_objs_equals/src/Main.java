@@ -111,6 +111,15 @@ public class Main {
         bath.washAnimal(eric);
         print(eric);
         eric.says();
+        print("");
+        Arthropod tarantula = new Spider("Tarantula spider");
+        tarantula.setYearsOld(230, Spider.maxYearsOld);
+        tarantula.setWeigthKg(0.85);
+        print(tarantula);
+        Arthropod.becomeImago(tarantula);
+        tarantula.move();
+        Arthropod arthropod = (Arthropod) tarantula;
+        arthropod.move();
     }
     static void print(Object obj) {
         System.out.println(obj);

@@ -15,4 +15,5 @@ public enum Legs {
     public static Legs[] getMammals() {
         return new Legs[]{Bipedal, Quadruped};
     }
+    public static Legs[] getArthropods() {return new Legs[]{Insects, Spiders};}
 }

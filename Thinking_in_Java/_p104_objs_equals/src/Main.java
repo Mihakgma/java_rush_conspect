@@ -113,6 +113,10 @@ public class Main {
         eric.says();
         print("");
         Arthropod tarantula = new Spider("Tarantula spider");
+//        tarantula.createCobWeb(); // cannot do this method because it is absent in Arthropod class!!!
+        Spider tarantula2 = (Spider) tarantula;
+        tarantula2.createCobWeb(); // now method became available!!!
+        print(tarantula2);
         tarantula.setYearsOld(230, Spider.maxYearsOld);
         tarantula.setWeigthKg(0.85);
         print(tarantula);

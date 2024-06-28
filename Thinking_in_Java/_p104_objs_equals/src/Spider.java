@@ -15,4 +15,7 @@ public class Spider extends Arthropod {
     public void setYearsOld(int yearsOld) {
         super.setYearsOld(yearsOld, this.maxYearsOld);
     }
+    public void createCobWeb(){
+        System.out.println(getName() + " created a net!!!");
+    }
 }

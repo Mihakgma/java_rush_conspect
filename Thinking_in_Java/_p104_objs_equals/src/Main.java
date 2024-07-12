@@ -89,17 +89,20 @@ public class Main {
         sparrow.says();
         print("sparrow weight before being eaten is:");
         print(df.format(sparrow.getWeigthKg()));
+        sparrow.fly();
         cat1.eatAnimal(sparrow);
+        sparrow.fly();
         print("sparrow weight after being eaten is:");
         print(df.format(sparrow.getWeigthKg()));
         print("trying to do some actions by or with eaten sparrow:");
         sparrow.move();
         sparrow.says();
         print("\\nRacoon check...");
-        Mammal racoon = new Mammal("Racoon", 4);
+        Mammal racoon = new Mammal("Racoon", 4, 3.0);
         print(racoon);
         racoon.move();
         racoon.says();
+        racoon.swim();
         Bath bath = new Bath();
         bath.washAnimal(racoon);
         print(racoon);
@@ -124,6 +127,8 @@ public class Main {
         tarantula.move();
         Arthropod arthropod = (Arthropod) tarantula;
         arthropod.move();
+        arthropod.swim();
+        tarantula2.swim();
     }
     static void print(Object obj) {
         System.out.println(obj);

@@ -1,4 +1,4 @@
-public class Bird extends BasicAnimal{
+public class Bird extends BasicAnimal implements Flyable{
     public String name;
     private int maxYearsOld = 75; // probably crows
 
@@ -17,6 +17,14 @@ public class Bird extends BasicAnimal{
             return;
         }
         System.out.println("Bird " + getName() + " opened its wings and flown away...");
+    }
+
+    @Override
+    public void fly() {
+        if (checkIfDead()) {
+            return;
+        }
+        System.out.println("Bird " + getName() + " flies into the sky");
     }
     public void setYearsOld(int yearsOld) {
         super.setYearsOld(yearsOld, this.maxYearsOld);

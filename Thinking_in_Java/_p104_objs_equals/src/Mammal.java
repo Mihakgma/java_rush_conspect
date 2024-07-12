@@ -7,9 +7,10 @@ public class Mammal extends BasicAnimal {
         super(Legs.Quadruped);
         super.setName(name);
     }
-    public Mammal (String name, int legs) {
+    public Mammal (String name, int legs, double swimSpeed) {
         super(Mammal.checkLegsNumber(legs));
         super.setName(name);
+        super.setSwimSpeed(swimSpeed);
     }
     public Mammal(String name, Legs legs) {
         super(legs);

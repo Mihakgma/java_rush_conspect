@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.text.DecimalFormat;
 
 
-public class BasicAnimal implements Animal{
+public class BasicAnimal implements Animal, Swimmable{
     protected String name;
     protected int yearsOld;
     protected double weigthKg;
@@ -12,6 +12,7 @@ public class BasicAnimal implements Animal{
     protected int legsNum;
     protected ArrayList<Leg> legsContainer = new ArrayList<>();
     protected boolean isClean;
+    protected double swimSpeed;
 
     public BasicAnimal(Legs legs) {
 //        this.name = "";
@@ -21,6 +22,26 @@ public class BasicAnimal implements Animal{
         this.isAlive = true;
         this.legsNum = legs.ordinal();
         fulfillLegsContainer();
+        this.swimSpeed = SWIM_SPEED_MIN;
+    }
+
+    public BasicAnimal(Legs legs, double swimSpeed) {
+//        this.name = "";
+        this.yearsOld = minYearsOld;
+        this.weigthKg = minKgWeight;
+        this.parasitesLanded = new ArrayList<Parasite>();
+        this.isAlive = true;
+        this.legsNum = legs.ordinal();
+        fulfillLegsContainer();
+        this.swimSpeed = swimSpeed;
+    }
+
+    public double getSwimSpeed() {
+        return swimSpeed;
+    }
+
+    public void setSwimSpeed(double swimSpeed) {
+        this.swimSpeed = swimSpeed;
     }
 
     protected void fulfillLegsContainer() {
@@ -151,6 +172,14 @@ public class BasicAnimal implements Animal{
 
     public int getLegsNum() {
         return legsNum;
+    }
+
+    @Override
+    public void swim(){
+        if (checkIfDead()){
+            return;
+        }
+        print(getName() + " swims perfectly with speed: " + getSwimSpeed());
     }
 
     @Override

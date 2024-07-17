@@ -20,6 +20,11 @@ public class Parasite extends BasicAnimal{
     }
 
     @Override
+    public void swim() {
+        print(this.getName() + " cannot swim... :-(((");
+    }
+
+    @Override
     public String toString() {
         String s = super.toString();
         if (getHost() != null) {

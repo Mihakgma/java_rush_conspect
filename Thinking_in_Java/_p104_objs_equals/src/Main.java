@@ -1,5 +1,8 @@
 //import java.util.Arrays;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 
 /***
@@ -10,12 +13,13 @@ import java.text.DecimalFormat;
  to keep it save of unsanctional changes!!!
  */
 public class Main {
+    public static ArrayList<BasicAnimal> animals = new ArrayList<>();
     public static void main(String[] args) throws Throwable {
         DecimalFormat df = new DecimalFormat("#.#####");
 
         Dog dog1 = new Dog("Spot");
         dog1.setWeigthKg(7.3);
-        Dog dog2 = new Dog("Spot");
+        Dog dog2 = new Dog("Spotify");
         dog2.setWeigthKg(3);
         dog2.setYearsOld(100);
 
@@ -90,6 +94,9 @@ public class Main {
         print("sparrow weight before being eaten is:");
         print(df.format(sparrow.getWeigthKg()));
         sparrow.fly();
+        Parasite trematode = new Parasite("Trematode", Legs.Nolegs);
+        sparrow.append_parazyte(trematode);
+        print("Cat eats bird...");
         cat1.eatAnimal(sparrow);
         sparrow.fly();
         print("sparrow weight after being eaten is:");
@@ -129,6 +136,18 @@ public class Main {
         arthropod.move();
         arthropod.swim();
         tarantula2.swim();
+        print("\nSorting created animals by their age (years):");
+        Collections.addAll(animals,
+                dog1, dog2, cat1, racoon,
+                tarantula, tarantula2, eric, beast,
+                sparrow, flea, bullTapeworm, trematode);
+        // with comparator help sort animals by their age
+        Collections.sort(animals, new AnimalAgeComparator()); // + use LegsNumberComparator simultaneously!!!
+        for (BasicAnimal animal: animals) {
+            print(animal);
+            animal.swim();
+        }
+
     }
     static void print(Object obj) {
         System.out.println(obj);

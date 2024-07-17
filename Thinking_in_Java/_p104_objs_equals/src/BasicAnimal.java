@@ -1,7 +1,12 @@
 import java.util.ArrayList;
 import java.text.DecimalFormat;
 
-
+/**
+ * For this class need to think about create parasites list private and
+ * adding and also removing them from host through special public methods
+ * because with this procedures has to change also weight of the animal:
+ * donor as well as recepient (parasites sharing process)!!!
+*/
 public class BasicAnimal implements Animal, Swimmable{
     protected String name;
     protected int yearsOld;
@@ -57,6 +62,9 @@ public class BasicAnimal implements Animal, Swimmable{
         print(getName() + " has " + legsNum + " legs");
         print(getLegsConainer());
     }
+    public int getLegsNumber(){
+        return legsNum;
+    }
 
     public String getName() {
         return name;
@@ -84,6 +92,11 @@ public class BasicAnimal implements Animal, Swimmable{
             BasicAnimal host = ((Parasite) this).getHost();
             // remove parasite from parasite list here through special method!!!
             ((Parasite) this).setHost(null);
+        }
+        if (this.parasitesLanded.size() > 0) {
+            for (Parasite parasite: this.parasitesLanded) {
+                parasite.becomeDead();
+            }
         }
 //        ObjsKiller.finish(this);
     }
@@ -156,6 +169,7 @@ public class BasicAnimal implements Animal, Swimmable{
             for (int i = 0; i < this.parasitesLanded.size(); i++) {
                 animal.append_parazyte(this.parasitesLanded.get(i));
             }
+            this.parasitesLanded = new ArrayList<Parasite>();
         } else {
             if (prstsToShare > maxPrstsShare || prstsToShare < 0) {
                 print("Parasites to share number has to be between 0 and " + maxPrstsShare);
@@ -164,6 +178,10 @@ public class BasicAnimal implements Animal, Swimmable{
             } else {
                 for (int i = 0; i < prstsToShare; i++) {
                     animal.append_parazyte(this.parasitesLanded.get(i));
+                }
+                // replace parasites to null in donor animal
+                for (int i = 0; i < prstsToShare; i++) {
+                    this.parasitesLanded.set(i, null);
                 }
             }
         }

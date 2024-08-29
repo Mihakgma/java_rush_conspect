@@ -1,3 +1,4 @@
+package animals;
 public class Mammal extends BasicAnimal {
     public Mammal() {
         super(Legs.Quadruped);

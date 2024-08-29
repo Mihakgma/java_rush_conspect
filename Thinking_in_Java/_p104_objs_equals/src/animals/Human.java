@@ -1,3 +1,4 @@
+package animals;
 public class Human extends Mammal {
     protected String name;
     private int maxYearsOld = 150;

@@ -1,3 +1,4 @@
+package animals;
 public class Spider extends Arthropod {
     protected String name;
     // https://nplus1.ru/news/2018/04/27/oldest-spider

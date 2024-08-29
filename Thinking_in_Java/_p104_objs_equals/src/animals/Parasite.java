@@ -1,3 +1,4 @@
+package animals;
 public class Parasite extends BasicAnimal{
     protected String name;
     protected BasicAnimal host;

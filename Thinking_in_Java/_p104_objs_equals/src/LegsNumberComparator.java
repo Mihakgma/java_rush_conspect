@@ -1,4 +1,6 @@
 import java.util.Comparator;
+import animals.*;
+
 public class LegsNumberComparator implements Comparator<BasicAnimal> {
     @Override
     public int compare(BasicAnimal animal1, BasicAnimal animal2) {

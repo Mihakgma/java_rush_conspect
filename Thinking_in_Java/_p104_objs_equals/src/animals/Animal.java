@@ -1,3 +1,4 @@
+package animals;
 public interface Animal {
     String nickName = "Beastie";
     int minYearsOld = 0;

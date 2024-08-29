@@ -1,3 +1,4 @@
+package animals;
 public class Arthropod extends BasicAnimal{
     public Arthropod(String name, Legs legs) {
         super(legs);

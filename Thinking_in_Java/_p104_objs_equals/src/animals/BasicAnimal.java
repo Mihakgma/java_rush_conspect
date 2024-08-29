@@ -1,5 +1,8 @@
+package animals;
+
 import java.util.ArrayList;
 import java.text.DecimalFormat;
+import body_part.*;
 
 /**
  * For this class need to think about create parasites list private and
@@ -80,7 +83,7 @@ public class BasicAnimal implements Animal, Swimmable{
 
     public double getWeigthKg() {return this.weigthKg;}
 
-    void becameClean() {
+    public void becameClean() {
         isClean = true;
     }
 

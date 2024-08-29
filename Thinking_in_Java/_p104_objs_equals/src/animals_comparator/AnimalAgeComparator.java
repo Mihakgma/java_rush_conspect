@@ -1,4 +1,7 @@
+package animals_comparator;
+
 import java.util.Comparator;
+import animals.*;
 
 public class AnimalAgeComparator implements Comparator<BasicAnimal>{
     @Override

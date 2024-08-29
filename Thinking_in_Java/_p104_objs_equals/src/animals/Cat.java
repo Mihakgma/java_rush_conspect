@@ -1,4 +1,4 @@
-
+package animals;
 public class Cat extends Mammal {
     protected String name;
     private final int maxYearsOld = 40;

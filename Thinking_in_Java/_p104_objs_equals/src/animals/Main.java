@@ -1,9 +1,13 @@
-//import java.util.Arrays;
+package animals;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-//import java.util.Collection;
 import java.util.Collections;
-
+import animals_comparator.*;
+import things.*;
+//import AnimalAgeComparator.*;
+//import Bath.*;
+//import basic_animal.*;
 
 /***
 @author Mikhail Tabakaev

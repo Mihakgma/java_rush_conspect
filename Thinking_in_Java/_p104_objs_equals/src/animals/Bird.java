@@ -1,3 +1,4 @@
+package animals;
 public class Bird extends BasicAnimal implements Flyable{
     public String name;
     private int maxYearsOld = 75; // probably crows

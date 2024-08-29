@@ -1,3 +1,6 @@
+package things;
+import animals.*;
+
 public class Bath extends Thing {
     public void washAnimal(BasicAnimal animal) {
         animal.becameClean();

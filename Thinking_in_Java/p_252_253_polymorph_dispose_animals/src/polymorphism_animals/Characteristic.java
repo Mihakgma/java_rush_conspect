@@ -1,14 +1,17 @@
 package polymorphism_animals;
 
-public class Characteristic {
-    private String s;
+public class Characteristic extends Shared {
+    private final String s;
 
     Characteristic(String s) {
         this.s = s;
-        Main.print("Creating Characteristic " + s);
+        Main.print("Creating Characteristic: " + s);
     }
 
     protected void dispose() {
-        Main.print("Finalizing Characteristic " + s);
+        delRef();
+        if (getRefCount() == 0) {
+            Main.print("Finalizing " + this + s + ">");
+        }
     }
 }

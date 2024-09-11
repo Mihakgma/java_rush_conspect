@@ -1,3 +1,5 @@
+package polymorphism_animals;
+
 public class Characteristic {
     private String s;
 

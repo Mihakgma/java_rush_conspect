@@ -3,8 +3,9 @@ package polymorphism_animals;
 public class Main {
     static int recipientCounter = 5;
     public static void main(String[] args) {
-        Frog frog = new Frog();
-        Frog frog1 = new Frog();
+        Frog frog = new Frog("pound");
+        Frog frog1 = new Frog("lake");
+        print(Frog.classIdentifier);
         print("\nByeeeeee!\n");
         frog.dispose();
         frog1.dispose();

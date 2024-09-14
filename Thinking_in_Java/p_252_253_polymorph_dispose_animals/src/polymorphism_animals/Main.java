@@ -6,7 +6,7 @@ public class Main {
         Frog frog = new Frog("pound");
         Frog frog1 = new Frog("lake");
         print(Frog.classIdentifier);
-        print("\nByeeeeee!\n");
+        print("\nByyyyyyee!\n");
         frog.dispose();
         frog1.dispose();
         print("\n Trying to compose and finalize inside the other object shared obj");

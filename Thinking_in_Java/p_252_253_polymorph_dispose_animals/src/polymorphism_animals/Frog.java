@@ -1,6 +1,8 @@
 package polymorphism_animals;
 
 
+import java.util.Objects;
+
 public class Frog extends Amphibian{
     static final String classIdentifier = RandomString.generateString();
     final String location;
@@ -18,4 +20,15 @@ public class Frog extends Amphibian{
         super.dispose();
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (!(object instanceof Frog frog)) return false;
+        return Objects.equals(location, frog.location) && Objects.equals(p, frog.p) && Objects.equals(t, frog.t);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(location, p, t);
+    }
 }

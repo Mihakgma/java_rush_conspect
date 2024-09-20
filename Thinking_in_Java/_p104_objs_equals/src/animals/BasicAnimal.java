@@ -1,7 +1,9 @@
 package animals;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.text.DecimalFormat;
+
 import body_part.*;
 
 /**
@@ -9,8 +11,8 @@ import body_part.*;
  * adding and also removing them from host through special public methods
  * because with this procedures has to change also weight of the animal:
  * donor as well as recepient (parasites sharing process)!!!
-*/
-public class BasicAnimal implements Animal, Swimmable{
+ */
+public class BasicAnimal implements Animal, Swimmable, Serializable {
     protected String name;
     protected int yearsOld;
     protected double weigthKg;
@@ -61,11 +63,13 @@ public class BasicAnimal implements Animal, Swimmable{
     public ArrayList<Leg> getLegsConainer() {
         return legsContainer;
     }
+
     public void printLegsNumber() {
         print(getName() + " has " + legsNum + " legs");
         print(getLegsConainer());
     }
-    public int getLegsNumber(){
+
+    public int getLegsNumber() {
         return legsNum;
     }
 
@@ -81,7 +85,9 @@ public class BasicAnimal implements Animal, Swimmable{
         return this.yearsOld;
     }
 
-    public double getWeigthKg() {return this.weigthKg;}
+    public double getWeigthKg() {
+        return this.weigthKg;
+    }
 
     public void becameClean() {
         isClean = true;
@@ -97,7 +103,7 @@ public class BasicAnimal implements Animal, Swimmable{
             ((Parasite) this).setHost(null);
         }
         if (this.parasitesLanded.size() > 0) {
-            for (Parasite parasite: this.parasitesLanded) {
+            for (Parasite parasite : this.parasitesLanded) {
                 parasite.becomeDead();
             }
         }
@@ -149,6 +155,7 @@ public class BasicAnimal implements Animal, Swimmable{
             this.weigthKg = minKgWeight;
         }
     }
+
     public void append_parazyte(Parasite parasite) {
         if (this.checkIfDead() || parasite.checkIfDead()) {
             return;
@@ -163,6 +170,7 @@ public class BasicAnimal implements Animal, Swimmable{
         this.setWeigthKg(this.getWeigthKg() + parasite.getWeigthKg());
         this.says();
     }
+
     public void shareParasites(BasicAnimal animal, boolean all, int prstsToShare) {
         if (this.checkIfDead() || animal.checkIfDead()) {
             return;
@@ -196,8 +204,8 @@ public class BasicAnimal implements Animal, Swimmable{
     }
 
     @Override
-    public void swim(){
-        if (checkIfDead()){
+    public void swim() {
+        if (checkIfDead()) {
             return;
         }
         print(getName() + " swims perfectly with speed: " + getSwimSpeed());
@@ -208,12 +216,12 @@ public class BasicAnimal implements Animal, Swimmable{
         DecimalFormat df = new DecimalFormat("#.#####");
         return
                 "Name: " + getName() + "\n" +
-                "Years old: " + getYearsOld() + "\n" +
-                "Weight: " + df.format(getWeigthKg()) + "\n" +
-                "Is alive: " + isAlive + "\n" +
-                "Legs number: " + getLegsNum() + "\n" +
-                "Parazites number: " + parasitesLanded.size() + "\n" +
-                "Is clean: " + isClean;
+                        "Years old: " + getYearsOld() + "\n" +
+                        "Weight: " + df.format(getWeigthKg()) + "\n" +
+                        "Is alive: " + isAlive + "\n" +
+                        "Legs number: " + getLegsNum() + "\n" +
+                        "Parazites number: " + parasitesLanded.size() + "\n" +
+                        "Is clean: " + isClean;
     }
 
     static void print(Object obj) {

@@ -1,5 +1,7 @@
 package body_part;
 
-public class BodyPart {
+import java.io.Serializable;
+
+public class BodyPart implements Serializable {
 
 }

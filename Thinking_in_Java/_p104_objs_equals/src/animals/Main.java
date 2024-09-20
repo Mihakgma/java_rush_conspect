@@ -1,16 +1,19 @@
 package animals;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+
 import animals_comparator.*;
 import things.*;
-//import AnimalAgeComparator.*;
-//import Bath.*;
-//import basic_animal.*;
+
 
 /***
-@author Mikhail Tabakaev
+ @author Mikhail Tabakaev
  NB! Need to think about using Observer Pattern in this project. If this is really needed here...
  Objects Fabrique is necessary here or not - need to find out!!!
  In BasicAnimal class need to add removeParasite method and field parasitesLanded make protected
@@ -18,6 +21,11 @@ import things.*;
  */
 public class Main {
     public static ArrayList<BasicAnimal> animals = new ArrayList<>();
+    // some specialists recommend to save data in *.bin format cause of the data nature...
+    public static String filename = "animals.dat";
+    public static ArrayList<BasicAnimal> animalsArrayList = new ArrayList<>();
+    public static ArrayList<BasicAnimal> animalsArrayListRead = new ArrayList<>();
+
     public static void main(String[] args) throws Throwable {
         DecimalFormat df = new DecimalFormat("#.#####");
 
@@ -147,12 +155,41 @@ public class Main {
                 sparrow, flea, bullTapeworm, trematode);
         // with comparator help sort animals by their age
         Collections.sort(animals, new AnimalAgeComparator()); // + use LegsNumberComparator simultaneously!!!
-        for (BasicAnimal animal: animals) {
+        for (BasicAnimal animal : animals) {
             print(animal);
             animal.swim();
         }
 
+        // Writing Animal obj to file and reading data from it
+        Collections.addAll(animalsArrayList,
+                dog1, dog2, cat1, racoon,
+                tarantula, tarantula2, eric, beast,
+                sparrow, flea, bullTapeworm, trematode);
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
+            oos.writeObject(animalsArrayList);
+            print("File has been written");
+        } catch (Exception ex) {
+            print(ex.getMessage());
+        }
+        // reading from file:
+        print("\n\n\nREADING FROM FILE!!!\n\n\n");
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+
+            animalsArrayListRead = ((ArrayList<BasicAnimal>) ois.readObject());
+        } catch (Exception ex) {
+
+            print(ex.getMessage());
+        }
+        int animalsAliveNumber = 0;
+        for (BasicAnimal a : animalsArrayListRead) {
+            animalsAliveNumber += a.isAlive ? 1 : 0;
+            print("\n" + a);
+        }
+        print("\n\nAnimals alive in ArrayList = " + animalsAliveNumber);
+        print("Animals dead in ArrayList = " + (animalsArrayListRead.size() - animalsAliveNumber));
+        print("Animals TOTAL amount = " + animalsArrayListRead.size());
     }
+
     static void print(Object obj) {
         System.out.println(obj);
     }

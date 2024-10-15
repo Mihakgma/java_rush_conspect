@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SprinklerSystem_p207/SprinklerSystem_p207.iml" filepath="$PROJECT_DIR$/SprinklerSystem_p207/SprinklerSystem_p207.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Thinking_in_Java.iml" filepath="$PROJECT_DIR$/.idea/Thinking_in_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VariablesInitVariants_pp208_209/VariablesInitVariants_pp208_209.iml" filepath="$PROJECT_DIR$/VariablesInitVariants_pp208_209/VariablesInitVariants_pp208_209.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_p104_objs_equals/_p104_objs_equals.iml" filepath="$PROJECT_DIR$/_p104_objs_equals/_p104_objs_equals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p126_checking_Strings_method/p126_checking_Strings_method.iml" filepath="$PROJECT_DIR$/p126_checking_Strings_method/p126_checking_Strings_method.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p126_over_flowing_digits/p126_over_flowing_digits.iml" filepath="$PROJECT_DIR$/p126_over_flowing_digits/p126_over_flowing_digits.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p129_while_loop/p129_while_loop.iml" filepath="$PROJECT_DIR$/p129_while_loop/p129_while_loop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p130_for_loop_example/p130_for_loop_example.iml" filepath="$PROJECT_DIR$/p130_for_loop_example/p130_for_loop_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p132_for_each_float/p132_for_each_float.iml" filepath="$PROJECT_DIR$/p132_for_each_float/p132_for_each_float.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p137_goto_labels/p137_goto_labels.iml" filepath="$PROJECT_DIR$/p137_goto_labels/p137_goto_labels.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p142_digits_vampires/p142_digits_vampires.iml" filepath="$PROJECT_DIR$/p142_digits_vampires/p142_digits_vampires.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p146_constructor_methods_overloading_Tree/p146_constructor_methods_overloading_Tree.iml" filepath="$PROJECT_DIR$/p146_constructor_methods_overloading_Tree/p146_constructor_methods_overloading_Tree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p160_finalize_termination_conditions/p160_finalize_termination_conditions.iml" filepath="$PROJECT_DIR$/p160_finalize_termination_conditions/p160_finalize_termination_conditions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p161_tank_obj_finalization/p161_tank_obj_finalization.iml" filepath="$PROJECT_DIR$/p161_tank_obj_finalization/p161_tank_obj_finalization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p177_constructor_links_17/p177_constructor_links_17.iml" filepath="$PROJECT_DIR$/p177_constructor_links_17/p177_constructor_links_17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p212_5th_task/p212_5th_task.iml" filepath="$PROJECT_DIR$/p212_5th_task/p212_5th_task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p214_215_delegations_example/p214_215_delegations_example.iml" filepath="$PROJECT_DIR$/p214_215_delegations_example/p214_215_delegations_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_242_polymorphismis_shapes/p_242_polymorphismis_shapes.iml" filepath="$PROJECT_DIR$/p_242_polymorphismis_shapes/p_242_polymorphismis_shapes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_244_cycles_classes/p_244_cycles_classes.iml" filepath="$PROJECT_DIR$/p_244_cycles_classes/p_244_cycles_classes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_250_sandwich/p_250_sandwich.iml" filepath="$PROJECT_DIR$/p_250_sandwich/p_250_sandwich.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_252_253_polymorph_dispose_animals/p_252_253_polymorph_dispose_animals.iml" filepath="$PROJECT_DIR$/p_252_253_polymorph_dispose_animals/p_252_253_polymorph_dispose_animals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_389_391_finally_what_for/p_389_391_finally_what_for.iml" filepath="$PROJECT_DIR$/p_389_391_finally_what_for/p_389_391_finally_what_for.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_392_393_ambush_lost_exception/p_392_393_ambush_lost_exception.iml" filepath="$PROJECT_DIR$/p_392_393_ambush_lost_exception/p_392_393_ambush_lost_exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_397_constructors/p_397_constructors.iml" filepath="$PROJECT_DIR$/p_397_constructors/p_397_constructors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_455_ClassesLoading_SweetShop/p_455_ClassesLoading_SweetShop.iml" filepath="$PROJECT_DIR$/p_455_ClassesLoading_SweetShop/p_455_ClassesLoading_SweetShop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_456_457_typeinfo_toys/p_456_457_typeinfo_toys.iml" filepath="$PROJECT_DIR$/p_456_457_typeinfo_toys/p_456_457_typeinfo_toys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_595_598_generics_functional/p_595_598_generics_functional.iml" filepath="$PROJECT_DIR$/p_595_598_generics_functional/p_595_598_generics_functional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p_97_98_aliasing_example/p_97_98_aliasing_example.iml" filepath="$PROJECT_DIR$/p_97_98_aliasing_example/p_97_98_aliasing_example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pp154_155_passing_this/pp154_155_passing_this.iml" filepath="$PROJECT_DIR$/pp154_155_passing_this/pp154_155_passing_this.iml" />
+      <module fileurl="file://$PROJECT_DIR$/print_system_info/print_system_info.iml" filepath="$PROJECT_DIR$/print_system_info/print_system_info.iml" />
+    </modules>
+  </component>
+</project>
